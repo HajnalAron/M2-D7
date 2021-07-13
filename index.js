@@ -42,7 +42,9 @@
         const trimParagraphs = function(){
             let target = document.querySelectorAll('div.blog-post > p:not(p.blog-post-meta)')
             for (let i = 0; i < target.length; i++){
-                
+                let targetText = target[i].innerText
+                let targetTextSplit = targetText.slice(0,50)
+                target[i].innerText = targetTextSplit
             }            
         }
 
@@ -60,7 +62,7 @@
         }
 
         const authorAlert = function(event){
-            alert(event.innerHTML)
+            alert(event.target.innerHTML)
         }
 
         const authorAlertAdd = function() {
