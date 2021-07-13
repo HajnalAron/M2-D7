@@ -45,3 +45,28 @@
                 
             }            
         }
+
+        const newBlogPost = function(){
+            let target = document.querySelector('main > div > div')
+            let blogPostTitle = document.createElement('h2')
+            let blogPostBody = document.createElement('div')
+            target.insertBefore(blogPostBody, target[1])
+            target.insertBefore(blogPostTitle, target[1])
+        }
+
+        const removeLastPost = function(){
+            let target = document.querySelectorAll('div.blog-post:not(p.blog-post-meta)')
+            target[target.length-1].remove()
+        }
+
+        const authorAlert = function(event){
+            alert(event.innerHTML)
+        }
+
+        const authorAlertAdd = function() {
+            targets = document.querySelectorAll('p.blog-post-meta > a')
+            for (let i = 0; i < targets.length; i++){ 
+                targets[i].addEventListener("mouseover", authorAlert)
+            }
+        }
+    
